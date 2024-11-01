@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <!-- include the same navigation Bar as the home page -->
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="gallery-page">
+        <div class="container">
+            <h1>Gallery</h1>
+            <div class="gallery-catrgories">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="weddings">Weddings</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="landscapes">Landscape</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item weddings">
+                    <img src="" alt="Wedding 1">
+                </div>
+                <div class="gallery-item portraits">
+                    <img src="" alt="portraits 1">
+                </div>
+                <div class="gallery-item landscapes">
+                    <img src="" alt="Landscape 1">
+                   
+                </div>
+                 <!-- Add more gallery items as needed -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-cotainer">
+            <div class="footer-section about">
+                <h2>About Me</h2>
+                <p>Passionate photographer with over 10 years of experience capturing stunning visuals.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quik Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact</h2>
+                <p>Email: collinsniique@gmail.com</p>
+                <p>Phone: +256 777353085</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Follow Me</h2>
+                <a href="#"><img src="" alt="facebook"></a>
+                <a href="#"><img src="" alt="Instagram"></a>
+                <a href="#"><img src="" alt="Twitter"></a>
+                <a href="#"><img src="" alt="WhatsApp"></a>
+            </div>
+        </div>
+        <div class="footer-botom">
+            &copy; 2024 NIIQUE TECHNOLOGIES. All Rights Reserved.
+        </div>
+    </footer>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-items');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
